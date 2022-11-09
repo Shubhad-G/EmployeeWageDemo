@@ -11,21 +11,28 @@ namespace EmployeeWageDemo
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Demo program");
-            int dailyWage = 0;
-            int fullTime = 8;
+            int dailyWage = 20;
+            int emp_Hrs = 0;
             Random random = new Random();
-            int EmployeeInput=random.Next(0,2);
-            if (EmployeeInput == 1)
+            int fullTime = 1;
+            int partTime = 2;
+            int employeeInput = random.Next(0, 3);
+            if (employeeInput == fullTime)
             {
                 Console.WriteLine("Employee is present");
-                dailyWage = 20;
+                emp_Hrs = 8;
             }
+            else if(employeeInput == partTime)
+            {
+                Console.WriteLine("Employee is present");
+                emp_Hrs = 4;
+            }  
             else
             {
                 Console.WriteLine("Employee is absent");
-                dailyWage = 0;
-            }    
-            int empWage = dailyWage * fullTime;
+                emp_Hrs = 0;
+            }
+            int empWage = dailyWage * emp_Hrs;
             Console.WriteLine("Employee Wage:" + empWage);
             Console.ReadLine();
 
