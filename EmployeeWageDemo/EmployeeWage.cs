@@ -14,6 +14,8 @@ namespace EmployeeWageDemo
             int dailyWage = 20;
             int emp_Hrs = 0;
             Random random = new Random();
+             int fullTime = 1;
+            int partTime = 2;
             int EmployeeInput=random.Next(0,3);
             switch(EmployeeInput)
             {
