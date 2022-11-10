@@ -13,9 +13,14 @@ namespace EmployeeWageDemo
             Console.WriteLine("Welcome to Employee Wage Demo program");
             int dailyWage = 20;
             int emp_Hrs = 0;
+            int totalHrs = 0;
+            int totalWage = 0;
             Random random = new Random();
-            
-            for (int Day = 0; Day <= 20; Day++)
+            int maxWrkHrs = 100;
+            int maxWrkDays = 20;
+            int days = 0;
+            int empWage = 0;
+            while(days<=maxWrkDays && totalHrs<=maxWrkHrs)
             {
                 int EmployeeInput = random.Next(0, 3);
                 switch (EmployeeInput)
@@ -33,9 +38,12 @@ namespace EmployeeWageDemo
                         emp_Hrs = 0;
                         break;
                 }
+                empWage = dailyWage * emp_Hrs;
+                totalWage+=empWage;
+                days++;
+                totalHrs += emp_Hrs;
             }
-            int empWage = dailyWage * emp_Hrs;
-            Console.WriteLine("Employee Wage:" + empWage);
+            Console.WriteLine("Total wage:" + totalWage + " Days: " + (days-1) + " Total hours: " + totalHrs);
             Console.ReadLine();
 
         }
