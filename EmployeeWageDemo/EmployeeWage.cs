@@ -22,14 +22,15 @@ namespace EmployeeWageDemo
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Demo program");
-            EmployeeWage e =  new EmployeeWage("Demart",100,20);
-            CalaucaleEmployeeWage(e.companyName,e.maxWorkHrs,e.MaxWorkDays);
-            
+            EmployeeWage demart =  new EmployeeWage("Demart",100,20);
+            demart.CalaucaleEmployeeWage();
+            EmployeeWage reliance = new EmployeeWage("Reliance", 50, 20);
+            reliance.CalaucaleEmployeeWage();
             Console.ReadLine();
 
         }
 
-        public static void CalaucaleEmployeeWage(string company,int maxWrkHrs,int maxWrkDays)
+        public void CalaucaleEmployeeWage()
         {
             int dailyWage = 20;
             int emp_Hrs = 0;
@@ -40,7 +41,7 @@ namespace EmployeeWageDemo
             int maxWrkDays = 20;*/
             int days = 0;
             int empWage = 0;
-            while (days <= maxWrkDays && totalHrs <= maxWrkHrs)
+            while (days <= this.MaxWorkDays && totalHrs <= maxWorkHrs)
             {
                 int EmployeeInput = random.Next(0, 3);
                 switch (EmployeeInput)
@@ -63,7 +64,7 @@ namespace EmployeeWageDemo
                 days++;
                 totalHrs += emp_Hrs;
             }
-            Console.WriteLine("Total wage for company:" + company +" is :"+totalWage+"  Total Days:" + (days - 1) + " Total hours:" + totalHrs);
+            Console.WriteLine("Total wage for company:" + this.companyName +" is :"+totalWage+"  Total Days:" + (days - 1) + " Total hours:" + totalHrs);
         }
     }
 }
