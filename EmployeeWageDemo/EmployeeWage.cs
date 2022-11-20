@@ -11,6 +11,13 @@ namespace EmployeeWageDemo
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Demo program");
+            CalaucaleEmployeeWage();
+            
+            Console.ReadLine();
+
+        }
+        public static void CalaucaleEmployeeWage()
+        {
             int dailyWage = 20;
             int emp_Hrs = 0;
             int totalHrs = 0;
@@ -20,7 +27,7 @@ namespace EmployeeWageDemo
             int maxWrkDays = 20;
             int days = 0;
             int empWage = 0;
-            while(days<=maxWrkDays && totalHrs<=maxWrkHrs)
+            while (days <= maxWrkDays && totalHrs <= maxWrkHrs)
             {
                 int EmployeeInput = random.Next(0, 3);
                 switch (EmployeeInput)
@@ -39,13 +46,11 @@ namespace EmployeeWageDemo
                         break;
                 }
                 empWage = dailyWage * emp_Hrs;
-                totalWage+=empWage;
+                totalWage += empWage;
                 days++;
                 totalHrs += emp_Hrs;
             }
-            Console.WriteLine("Total wage:" + totalWage + " Days: " + (days-1) + " Total hours: " + totalHrs);
-            Console.ReadLine();
-
+            Console.WriteLine("Total wage:" + totalWage + " Days: " + (days - 1) + " Total hours: " + totalHrs);
         }
     }
 }
