@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,22 +7,27 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageDemo
 {
+    
     internal class EmpWageBuilder:IComputeEmpWage
     {
 
-        EmployeeWage[] employeeWageArray;
+        //EmployeeWage[] employeeWageArray;
         int noOfCompanies=0;
 
+        List<EmployeeWage> employeeWageArray;
         public EmpWageBuilder()//
         {
-            this.employeeWageArray = new EmployeeWage[5];
+            this.employeeWageArray = new List<EmployeeWage>();
         }
 
         public void addEmpWage(string companyName, int maxWorkHrs, int maxWorkDays)//meaning
         {
-            employeeWageArray[this.noOfCompanies]=new EmployeeWage(companyName, maxWorkHrs, maxWorkDays);
-            noOfCompanies++;
+            EmployeeWage empWage = new EmployeeWage(companyName, maxWorkHrs, maxWorkDays);
+            this.employeeWageArray.Add(empWage);
+            this.CalaucaleEmployeeWage(empWage);
         }
+
+
 
         public void CalaucaleEmployeeWage()
         {
