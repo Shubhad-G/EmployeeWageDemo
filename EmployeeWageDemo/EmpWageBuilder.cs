@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageDemo
 {
-    internal class EmpWageBuilder
+    internal class EmpWageBuilder:IComputeEmpWage
     {
 
         EmployeeWage[] employeeWageArray;
         int noOfCompanies=0;
 
-        public EmpWageBuilder()//meaning
+        public EmpWageBuilder()//
         {
             this.employeeWageArray = new EmployeeWage[5];
         }
